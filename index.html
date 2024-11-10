@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Resume Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form action="#" id="form">
+      <h1>Personal Resume Builder</h1>
+
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        <div class="progress-step progress-step-active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <div class="form-set form-set-active">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <br />
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" required />
+          <br />
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required />
+          <br />
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required />
+          <br />
+          <label for="number">Contact No:</label>
+          <input type="tel" id="number" name="number" />
+          <br />
+          <label for="linkedinId">LinkedIn Profile:</label>
+          <input type="text" id="linkedinId" name="linkedinId" required />
+          <br />
+          <div class="">
+            <a href="#" class="btn btn-next width-50 m">Next</a>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-set">
+        <fieldset>
+          <legend>Summary</legend>
+          <textarea name="summary" id="summary" rows="5" required></textarea>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-set">
+        <fieldset>
+          <legend>Skills</legend>
+          <label for="skill">Skill:</label>
+          <textarea name="skill" id="skill" rows="5" required></textarea>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-set">
+        <fieldset>
+          <legend>Experience</legend>
+          <label for="jobTitle">Job Title:</label>
+          <input type="text" id="jobTitle" name="jobTitle" required />
+          <br />
+          <label for="company">Orginization/Company:</label>
+          <input type="text" id="company" name="company" required />
+          <br />
+          <label for="date">From:</label>
+          <input type="date" id="jobStartDate" name="date" required />
+          <br />
+          <label for="date">To:</label>
+          <input type="date" id="jobEndDate" name="date" />
+          <br />
+          <label for="description">Description:</label>
+          <textarea
+            name="description"
+            id="describe"
+            rows="5"
+            required
+          ></textarea>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-set">
+        <fieldset>
+          <legend>Education</legend>
+          <label for="degree">Degree Program:</label>
+          <select name="degree" id="degree" required>
+            <option disabled selected style="color: rgba(102, 101, 101, 0.733)">
+              select program
+            </option>
+            <option value="AD">AD</option>
+            <option value="BS">BS</option>
+            <option value="MS">MS</option>
+            <option value="PhD">PhD</option>
+          </select>
+          <br />
+          <label for="university">Field:</label>
+          <input type="text" id="field" name="field" required />
+          <br />
+          <label for="university">University Name:</label>
+          <input type="text" id="university" name="university" required />
+          <br />
+          <label for="uniCountry">Country:</label>
+          <input type="text" id="uniCountry" name="uniCountry" required />
+          <br />
+          <label for="date">From:</label>
+          <input type="date" id="startDate" name="date" required />
+          <br />
+          <label for="date">To:</label>
+          <input type="date" id="endDate" name="date" />
+          <br />
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <button type="submit" id="submit" class="btn">Submit</button>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <br />
+
+    <div id="resumePage" style="display: none">
+      <div id="generateResume" contenteditable="true">
+        <!-- user resume will generate here  -->
+      </div>
+      <div id="shareable-link-container" style="display: none">
+        <h3>Share Resume:</h3>
+        <a href="#" id="shareable-link" target="_blank"></a>
+        <br />
+        <button id="download" class="btn" style="margin-top: 10px">
+          <b>Download PDF</b>
+        </button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

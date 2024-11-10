@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+  background-color: #f0f4f8;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* form */
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.form-set {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-set-active {
+  display: block;
+  height: 600px;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+fieldset {
+  border: 2px solid #3498bd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 550px;
+  background-color: aliceblue;
+}
+
+legend {
+  font-weight: bold;
+  text-align: left;
+  color: #2c3e50;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+
+input,
+textarea,
+select {
+  width: calc(100% - 1px);
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #3498bd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* progress bar */
+
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem;
+  z-index: 0;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #3498bd;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 35px;
+  height: 35px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step-active {
+  background-color: #3498bd;
+  color: #f0f4f8;
+}
+
+/* buttons */
+
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 20px;
+  align-items: end;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.m {
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: #3498bd;
+  color: #f0f4f8;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+}
+
+/* editable resume */
+
+#generateResume {
+  outline: none;
+}
+
+/* unique link */
+
+#shareable-link {
+  color: rgb(46, 151, 186);
+  background-color: #dcdcdc;
+  border: 1px solid rgb(74, 43, 211);
+  border-radius: 0.25rem;
+  padding: 2px;
+}
