@@ -54,20 +54,13 @@ function updateProgressbar(): void {
 
 const form = document.getElementById("form") as HTMLFormElement;
 const resumePage = document.getElementById("resumePage") as HTMLDivElement;
-const generateResume = document.getElementById(
-  "generateResume"
-) as HTMLDivElement;
-const shareableLinkContainer = document.getElementById(
-  "shareable-link-container"
-) as HTMLDivElement;
-const shareableLinkElement = document.getElementById(
-  "shareable-link"
-) as HTMLAnchorElement;
-const downloadPdfButton = document.getElementById(
-  "download"
-) as HTMLButtonElement;
+const generateResume = document.getElementById("generateResume") as HTMLDivElement;
+const shareableLinkContainer = document.getElementById("shareable-link-container") as HTMLDivElement;
+const shareableLinkElement = document.getElementById("shareable-link") as HTMLAnchorElement;
+const downloadPdfButton = document.getElementById("download") as HTMLButtonElement;
 
-form.addEventListener("submit", (event: Event) => {
+form.addEventListener("submit", async (event: Event) => {
+  
   // prevents page reload
   event.preventDefault();
 
@@ -203,7 +196,7 @@ form.addEventListener("submit", (event: Event) => {
 
 // Handle PDF download
 downloadPdfButton.addEventListener("click", () => {
-  window.print();
+  window.print()
   // This will open the print dialog and allow the user to save as PDF
 });
 
